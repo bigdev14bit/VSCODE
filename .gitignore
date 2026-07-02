@@ -1,4 +1,3 @@
 node_modules/
-junit-platform-console-standalone-1.1.1.1.0.jar/
-package-lock.json/
-package.json/
+*junit*
+package-lock.json
