@@ -1,12 +1,16 @@
 public class LinearRegression {
-    //private firstData;
-    //private secondData;
-    public static void main(String[] args) {
-        //java.util.Scanner inputCollector = new java.util.Scanner(System.in);
-        //LinearRegression model = new LinearRegression();
 
-        //double firstData[] = {100.0, 20.0, 30.0, 40.0, 99.0};
-        //double secondData[] = {89.0, 100.0, 55.0, 54.0, 43.0};
+    private firstData;
+    private secondData;
+
+    public static void main(String[] args) {
+
+        java.util.Scanner inputCollector = new java.util.Scanner(System.in);
+
+        LinearRegression model = new LinearRegression();
+
+        double firstData[] = {100.0, 20.0, 30.0, 40.0, 99.0};
+        double secondData[] = {89.0, 100.0, 55.0, 54.0, 43.0};
 
         double xBar = model.calculateMean(firstData);
         double yBar = model.calculateMean(secondData);

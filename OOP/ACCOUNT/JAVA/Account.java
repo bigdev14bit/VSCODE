@@ -9,8 +9,8 @@ public class Account {
             balance = balance + amount;
         }
     }
-    public void withdraw(int amount) {
-        if(amount > 0) {
+    public void withdraw(String pin, int amount) {
+        if(amount > 0 && pin == "1234") {
             balance = balance - amount;
         }
     }

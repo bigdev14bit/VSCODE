@@ -1,22 +1,14 @@
-balance = 0
+BALANCE = 0
 
-def Account():
-    balance
+def account():
 
-def get_balance():
-    return balance
+    def getBalnce():
+        return BALANCE
+    
+    def deposit(amount):
+        if amount > 0:
+            BALANCE = BALANCE + amount
 
-    public int getBalance() {
-        return balance;
-    }
-    public void deposit(int amount) {
-        if(amount > 0) {
-            balance = balance + amount;
-        }
-    }
-    public void withdraw(int amount) {
-        if(amount > 0) {
-            balance = balance - amount;
-        }
-    }
-}
+    def withdraw(pin, amount):
+        if amount > 0 and pin == "1234":
+            BALANCE = BALANCE - amount

@@ -26,7 +26,7 @@ public class AccountTest {
     public void iHaveAnAccountAndIcanWithdraw() {
         Account myAccount = new Account();
         myAccount.deposit(1000);
-        myAccount.withdraw(500);
+        myAccount.withdraw("1234", 500);
         assertEquals(500, myAccount.getBalance());
     }
 }
