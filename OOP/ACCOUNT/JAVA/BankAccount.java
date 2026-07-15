@@ -1,55 +1,38 @@
-package bankApp;
+package OOP.ACCOUNT.JAVA;
 
-public class Account {
+import java.util.List;
+import java.util.ArrayList;
 
+public class BankAccount {
     private String name;
-    private int balance;
-    private int pin;
-    private int accountNumber;
+    private List<Account> accounts;
+    private int nextAccountNumber;
 
-    public Account(String name , int pin , int accountNumber) {
-        this.name = name;
-        this.pin = pin;
-        this.accountNumber = accountNumber;
-
+    public BankAccount(String name) {
+    this.name = name;
+	this.accounts = new ArrayList<Account>();
+	this.nextAccountNumber = 10000;
     }
 
-    public void deposit(int amount) {
-        if (amount < 0) {
-            throw new IllegalArgumentException("Amount cannot be negative");
-        }
-            balance = balance + amount;
-    }
+    public Account registerCustomer(String firstName, String lastName, String pin) {
+	String fullName = firstName + " " + lastName;
+    int balance = 0;
+	int accountNumber = this.nextAccountNumber;
+	this.nextAccountNumber = this.nextAccountNumber + 1;
 
-    public int getBalance(int pin) {
-        if (pin != this.pin) {
-            throw new IllegalArgumentException("Invalid pin");
-        }
-        return balance;
-    }
+	Account newAccount = new Account(fullName, pin, balance, accountNumber);
+	accounts.add(newAccount);
+	return newAccount;
+	}
 
-    public void withdraw(int amount, int pin) {
-        if (pin != this.pin) {
-            throw new IllegalArgumentException("Invalid pin");
-        }
-        if (amount < 0) {
-            throw new IllegalArgumentException("Amount cannot be negative");
-        }
-        if (amount > balance) {
-            throw new IllegalArgumentException("Insufficient balance");
-        }
-        balance = balance - amount;
+	public Account findAccountNumber(int accountNumber) {
+		for(Account account : accounts) {
+			return account;
+		}
+	}
 
-    }
-
-    public void changePin(int oldPin, int newPin) {
-        if (oldPin != this.pin) {
-            throw new IllegalArgumentException("Incorrect pin");
-        }
-        this.pin = newPin;
-    }
-
-    public int getAccountNumber() {
-        return accountNumber;
-    }
+	public void deposit(int amount, int accountNumber) {
+		Account account = findAccountNumber(accountNumber);
+		account.deposit(amount);
+	}
 }

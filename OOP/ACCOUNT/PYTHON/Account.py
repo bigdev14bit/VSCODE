@@ -1,14 +1,18 @@
-BALANCE = 0
+class Account:
+    def __init__(self, name, pin, balance, number):
+        self.name = name
+        self.pin = pin
+        self.balance = balance
+        self.number = number
 
-def account():
-
-    def getBalnce():
-        return BALANCE
+    def get_account(self):
+        return self.balance
     
-    def deposit(amount):
+    def deposit(self, amount):
         if amount > 0:
-            BALANCE = BALANCE + amount
+            self.balance += amount
+        else:
+            print("Amount Must Be Greater Than Zero.")
 
-    def withdraw(pin, amount):
-        if amount > 0 and pin == "1234":
-            BALANCE = BALANCE - amount
+    def withdraw(self, amount, pin):
+        k

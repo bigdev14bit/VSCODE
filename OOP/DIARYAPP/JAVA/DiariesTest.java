@@ -1,5 +1,5 @@
 package OOP.DIARYAPP.JAVA;
 
-public class Main {
+public class DiariesTest {
     
 }

@@ -1,4 +1,5 @@
 package OOP.ACCOUNT.JAVA;
-public class Bank {
+
+public class BankAccountTest {
     
 }
